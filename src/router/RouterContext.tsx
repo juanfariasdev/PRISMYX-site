@@ -68,15 +68,35 @@ export const RouterProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
+  const scrollToTarget = useCallback((target: string) => {
+    let attempts = 0;
+    const maxAttempts = 12;
+
+    const tryScroll = () => {
+      const element = document.querySelector(target);
+      if (element) {
+        const headerOffset = 76; // header 64px + 12px margin
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: Math.max(0, offsetPosition),
+          behavior: 'smooth',
+        });
+      } else if (attempts < maxAttempts) {
+        attempts++;
+        setTimeout(tryScroll, 40);
+      }
+    };
+
+    setTimeout(tryScroll, 20);
+  }, []);
+
   const push = useCallback((url: string) => {
     // If it's a pure hash link on the current page (e.g. #servicos)
     if (url.startsWith('#')) {
-      window.location.hash = url;
+      window.history.pushState(null, '', url);
       setHash(url);
-      const element = document.querySelector(url);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+      scrollToTarget(url);
       return;
     }
 
@@ -89,19 +109,14 @@ export const RouterProvider: React.FC<{ children: React.ReactNode }> = ({ childr
       setParams(matchRoute(parsedUrl.pathname).params);
 
       if (parsedUrl.hash) {
-        setTimeout(() => {
-          const element = document.querySelector(parsedUrl.hash);
-          if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-          }
-        }, 50);
+        scrollToTarget(parsedUrl.hash);
       } else {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     } catch {
       window.location.href = url;
     }
-  }, []);
+  }, [scrollToTarget]);
 
   const replace = useCallback((url: string) => {
     try {

@@ -127,6 +127,11 @@
     border-color: var(--border-divider);
   }
 
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
   body {
     background-color: var(--canvas-bg);
     color: var(--foreground);

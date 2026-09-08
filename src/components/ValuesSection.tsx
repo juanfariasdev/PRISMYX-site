@@ -42,7 +42,7 @@ export const ValuesSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 md:py-28 border-t border-border-divider relative bg-surface-raised/30">
+    <section id="valores" className="py-20 md:py-28 border-t border-border-divider relative bg-surface-raised/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-14 text-left">
