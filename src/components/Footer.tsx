@@ -101,7 +101,7 @@ export const Footer: React.FC = () => {
               </div>
               <div>
                 <span className="text-text-faint block">Base Operacional:</span>
-                <span className="text-text-high">São Paulo, SP — Brasil</span>
+                <span className="text-text-high">Machado, MG — Brasil</span>
               </div>
               <div>
                 <span className="text-text-faint block">Horário Comercial:</span>

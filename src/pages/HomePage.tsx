@@ -21,8 +21,8 @@ export const HomePage: React.FC = () => {
       'Desenvolvimento de sites, aplicações e integrações para empresas que escalam com tecnologia estruturada e governança de software.',
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'São Paulo',
-      addressRegion: 'SP',
+      addressLocality: 'Machado',
+      addressRegion: 'MG',
       addressCountry: 'BR',
     },
     contactPoint: {

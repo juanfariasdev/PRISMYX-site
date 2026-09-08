@@ -93,10 +93,10 @@ export const ContactSection: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-headline font-bold text-sm text-text-high">
-                    Modelo Remoto Global • SP HQ
+                    Modelo Remoto Global • Base Operacional
                   </h4>
                   <p className="text-xs text-text-muted leading-relaxed mt-1">
-                    Atendimento a clientes em todo o Brasil e no exterior, com base operacional em São Paulo.
+                    Atendimento a clientes em todo o Brasil e no exterior, com base operacional em Machado, MG.
                   </p>
                 </div>
               </div>
