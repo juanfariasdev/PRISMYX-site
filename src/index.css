@@ -1,0 +1,240 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: var(--primary);
+  --color-primary-glow: var(--primary-glow);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-container: var(--primary-container);
+
+  --color-secondary: var(--secondary);
+  --color-tertiary: var(--tertiary);
+
+  --color-status-success: var(--status-success);
+  --color-status-warning: var(--status-warning);
+  --color-status-error: var(--status-error);
+
+  --color-canvas-bg: var(--canvas-bg);
+  --color-surface: var(--surface);
+  --color-surface-base: var(--surface-base);
+  --color-surface-container: var(--surface-container);
+  --color-surface-inset: var(--surface-inset);
+  --color-surface-raised: var(--surface-raised);
+
+  --color-border-default: var(--border-default);
+  --color-border-divider: var(--border-divider);
+
+  --color-text-high: var(--text-high);
+  --color-text-muted: var(--text-muted);
+  --color-text-faint: var(--text-faint);
+  --color-text-inverse: var(--text-inverse);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-brand-primary: var(--primary);
+  --color-brand-secondary: var(--secondary);
+  --color-brand-tertiary: var(--tertiary);
+
+  --font-headline: 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+@layer base {
+  :root {
+    --canvas-bg: #f8fafc;
+    --surface: #ffffff;
+    --surface-base: #f1f5f9;
+    --surface-container: #ffffff;
+    --surface-inset: #e2e8f0;
+    --surface-raised: #f8fafc;
+    --border-default: #cbd5e1;
+    --border-divider: #e2e8f0;
+    --text-high: #0b1320;
+    --text-muted: #475569;
+    --text-faint: #64748b;
+    --text-inverse: #ffffff;
+    
+    --primary: #059669;
+    --primary-glow: rgba(5, 150, 105, 0.25);
+    --primary-foreground: #ffffff;
+    --primary-container: #10b981;
+    --secondary: #4338ca;
+    --tertiary: #0f766e;
+    --status-success: #16a34a;
+    --status-warning: #d97706;
+    --status-error: #dc2626;
+
+    --background: #f8fafc;
+    --foreground: #0b1320;
+    --card: #ffffff;
+    --card-foreground: #0b1320;
+    --popover: #ffffff;
+    --popover-foreground: #0b1320;
+    --muted: #f1f5f9;
+    --muted-foreground: #64748b;
+    --border: #cbd5e1;
+    --input: #cbd5e1;
+    --ring: #059669;
+  }
+
+  .dark {
+    --canvas-bg: #0b0f14;
+    --surface: #0d141d;
+    --surface-base: #101720;
+    --surface-container: #192029;
+    --surface-inset: #151d27;
+    --surface-raised: #1b2430;
+    --border-default: #263241;
+    --border-divider: #1f2a36;
+    --text-high: #f3f7fb;
+    --text-muted: #a8b3c2;
+    --text-faint: #6f7c8d;
+    --text-inverse: #081018;
+
+    --primary: #5af0b3;
+    --primary-glow: rgba(90, 240, 179, 0.35);
+    --primary-foreground: #003825;
+    --primary-container: #34d399;
+    --secondary: #c0c1ff;
+    --tertiary: #7de9db;
+    --status-success: #53d67a;
+    --status-warning: #f0b34a;
+    --status-error: #ef5f7a;
+
+    --background: #0b0f14;
+    --foreground: #f3f7fb;
+    --card: #101720;
+    --card-foreground: #f3f7fb;
+    --popover: #151d27;
+    --popover-foreground: #f3f7fb;
+    --muted: #192029;
+    --muted-foreground: #a8b3c2;
+    --border: #263241;
+    --input: #263241;
+    --ring: #5af0b3;
+  }
+
+  * {
+    border-color: var(--border-divider);
+  }
+
+  body {
+    background-color: var(--canvas-bg);
+    color: var(--foreground);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-headline {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  code, pre, .font-mono, .font-code {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom Design System utility classes */
+.bg-canvas-bg { background-color: var(--canvas-bg); }
+.bg-surface { background-color: var(--surface); }
+.bg-surface-base { background-color: var(--surface-base); }
+.bg-surface-container { background-color: var(--surface-container); }
+.bg-surface-inset { background-color: var(--surface-inset); }
+.bg-surface-raised { background-color: var(--surface-raised); }
+
+.border-default { border-color: var(--border-default); }
+.border-divider { border-color: var(--border-divider); }
+
+.text-high { color: var(--text-high); }
+.text-muted-custom { color: var(--text-muted); }
+.text-faint { color: var(--text-faint); }
+.text-inverse { color: var(--text-inverse); }
+
+.text-brand-primary,
+.text-primary {
+  color: var(--primary);
+}
+
+.bg-brand-primary,
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.border-brand-primary,
+.border-primary {
+  border-color: var(--primary);
+}
+
+/* Specific opacity helpers for primary green */
+.bg-primary\/10 {
+  background-color: rgba(90, 240, 179, 0.1);
+}
+.bg-primary\/15 {
+  background-color: rgba(90, 240, 179, 0.15);
+}
+.bg-primary\/20 {
+  background-color: rgba(90, 240, 179, 0.2);
+}
+.border-primary\/20 {
+  border-color: rgba(90, 240, 179, 0.2);
+}
+.border-primary\/30 {
+  border-color: rgba(90, 240, 179, 0.3);
+}
+.border-primary\/40 {
+  border-color: rgba(90, 240, 179, 0.4);
+}
+.border-primary\/50 {
+  border-color: rgba(90, 240, 179, 0.5);
+}
+
+.light .bg-primary\/10 {
+  background-color: rgba(5, 150, 105, 0.1);
+}
+.light .bg-primary\/15 {
+  background-color: rgba(5, 150, 105, 0.15);
+}
+.light .bg-primary\/20 {
+  background-color: rgba(5, 150, 105, 0.2);
+}
+.light .border-primary\/20 {
+  border-color: rgba(5, 150, 105, 0.2);
+}
+.light .border-primary\/30 {
+  border-color: rgba(5, 150, 105, 0.3);
+}
+.light .border-primary\/40 {
+  border-color: rgba(5, 150, 105, 0.4);
+}
+.light .border-primary\/50 {
+  border-color: rgba(5, 150, 105, 0.5);
+}
+
+.text-brand-tertiary { color: var(--tertiary); }
+.bg-brand-tertiary { background-color: var(--tertiary); }
+
+.text-brand-secondary { color: var(--secondary); }
+
+.glow-primary {
+  box-shadow: 0 0 24px -4px var(--primary-glow);
+}
+
+.glow-primary-sm {
+  box-shadow: 0 0 16px -2px var(--primary-glow);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Prismyx Tech",
+  "description": "Desenvolvimento de sites, aplicações e integrações para empresas que escalam com tecnologia estruturada e governança de software.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
